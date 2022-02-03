@@ -1,0 +1,11 @@
+div{
+    width: 20%;
+    color: green;
+}
+h6{
+    width: 20%;
+    color: rgb(107, 103, 103);
+    margin-left: 650px;
+    position:relative;
+    bottom: 140px;
+}

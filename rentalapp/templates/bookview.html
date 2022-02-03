@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rental Booking List</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script></head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg d-flex justify-content-start bg-success">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="http://127.0.0.1:8000" class="nav-link active text-light"><span class="material-icons">arrow_back</span></a></li>
+        </ul>
+    </nav>
+    <center><h1>Rental Booking List</h1></center>
+    <table class="table table-bordered table-success">
+        <thead class="thead-success">
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">CustomerName</th>
+            <th scope="col">rental_date</th>
+            <th scope="col">return_date</th>
+            <th scope="col">vehicle_type</th>
+        </tr>
+        </thead>
+        {% for i in view %}
+            <tr>
+                <td scope="row">{{i.id}}</td>
+                <td scope="row">{{i.CustomerName}}</td>
+                <td scope="row">{{i.rental_date}}</td>
+                <td scope="row">{{i.return_date}} <a href="returndate/{{ i.id }}"><span class="material-icons">mode_edit</span></a></td>
+                <td scope="row">{{i.vehicle_type}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
